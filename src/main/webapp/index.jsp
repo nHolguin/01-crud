@@ -12,8 +12,16 @@
         <title>INICIO - PRODUCTOS</title>
     </head>
     <body>
-        <h1>HOLA! Bienvenido!</h1>
+        <h1>HOLA! BIENVENIDO!</h1>
         <br />
         <h2>Men&uacute; de Opciones</h2>
+        <table border="2">
+            <tr>
+                <td><a href="productos?opcion=crear">Crear un Producto</a></td>
+            </tr>
+            <tr>
+                <td><a href="productos?opcion=listar">Listar Productos</a></td>
+            </tr>
+        </table>
     </body>
 </html>

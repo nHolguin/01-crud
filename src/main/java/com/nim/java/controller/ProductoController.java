@@ -7,6 +7,7 @@ package com.nim.java.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Anita
+ * @author Nimrod
  */
 @WebServlet(name = "ProductoController", urlPatterns = {"/productos"})
 public class ProductoController extends HttpServlet {
@@ -58,7 +59,15 @@ public class ProductoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        String opcion = request.getParameter("opcion");
+        if(opcion.equals("crear")) {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/crear.jsp");
+            requestDispatcher.forward(request, response);
+        }else if (opcion.equals("listar")){
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/listar.jsp");
+            requestDispatcher.forward(request, response);
+        }
     }
 
     /**
