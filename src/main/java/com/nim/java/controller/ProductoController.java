@@ -76,9 +76,6 @@ public class ProductoController extends HttpServlet {
             
             try {
                 lista = productoDao.obtenerProductos();
-                for(Producto producto : lista) {
-                    System.out.println(producto);
-                }
                 request.setAttribute("lista", lista);
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/listar.jsp");
                 requestDispatcher.forward(request, response);
@@ -101,15 +98,15 @@ public class ProductoController extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         String opcion = request.getParameter("opcion");
-        //Date fechaActual = new Date();
+        Date fechaActual = new Date();
         ProductoDAO productoDao = new ProductoDAO();
         Producto producto = new Producto();
         
         producto.setNombreProducto(request.getParameter("nombre"));
         producto.setCantidadProducto(Double.parseDouble(request.getParameter("cantidad")));
         producto.setPrecioProducto(Double.parseDouble(request.getParameter("precio")));
-        //producto.setFechaCrear(new java.sql.Date(fechaActual.getTime()));
-        //producto.setFechaActualizar(new java.sql.Date(fechaActual.getTime()));
+        producto.setFechaCrear(new java.sql.Date(fechaActual.getTime()));
+        producto.setFechaActualizar(new java.sql.Date(fechaActual.getTime()));
         
         try {
             productoDao.guardar(producto);

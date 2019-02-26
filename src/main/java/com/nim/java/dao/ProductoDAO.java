@@ -32,7 +32,7 @@ public class ProductoDAO {
         
         try {
             connection.setAutoCommit(false);
-            sql = "INSERT INTO producto (id_producto,nombre_producto,cantidad_producto,precio_producto,fecha_crear,fecha_actualizar) VALUES (?,?,?,?,?,?)";
+            sql = "INSERT INTO productos (id_producto,nombre_producto,cantidad_producto,precio_producto,fecha_crear,fecha_actualizar) VALUES (?,?,?,?,?,?)";
             statement = connection.prepareStatement(sql);
         
             statement.setString(1, null);

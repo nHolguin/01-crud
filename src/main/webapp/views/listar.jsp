@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Lista de Productos</h1>
-        <table>
+        <table border="2">
             <tr>
                 <td>Id</td>
                 <td>Nombre</td>
