@@ -5,8 +5,12 @@
  */
 package com.nim.java.controller;
 
+import com.nim.java.dao.ProductoDAO;
+import com.nim.java.model.Producto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -81,7 +85,25 @@ public class ProductoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        String opcion = request.getParameter("opcion");
+        //Date fechaActual = new Date();
+        ProductoDAO productoDao = new ProductoDAO();
+        Producto producto = new Producto();
+        
+        producto.setNombreProducto(request.getParameter("nombre"));
+        producto.setCantidadProducto(Double.parseDouble(request.getParameter("cantidad")));
+        producto.setPrecioProducto(Double.parseDouble(request.getParameter("precio")));
+        //producto.setFechaCrear(new java.sql.Date(fechaActual.getTime()));
+        //producto.setFechaActualizar(new java.sql.Date(fechaActual.getTime()));
+        
+        try {
+            productoDao.guardar(producto);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+            requestDispatcher.forward(request, response);
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
