@@ -122,6 +122,7 @@ public class ProductoDAO {
         try {
             connection.setAutoCommit(false);
             sql = "SELECT*FROM productos";
+            statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery(sql);
             
             while(resultSet.next()) {

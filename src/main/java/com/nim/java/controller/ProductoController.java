@@ -10,7 +10,9 @@ import com.nim.java.model.Producto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -69,8 +71,20 @@ public class ProductoController extends HttpServlet {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/crear.jsp");
             requestDispatcher.forward(request, response);
         }else if (opcion.equals("listar")){
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/listar.jsp");
-            requestDispatcher.forward(request, response);
+            ProductoDAO productoDao = new ProductoDAO();
+            List<Producto> lista = new ArrayList<>();
+            
+            try {
+                lista = productoDao.obtenerProductos();
+                for(Producto producto : lista) {
+                    System.out.println(producto);
+                }
+                request.setAttribute("lista", lista);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/listar.jsp");
+                requestDispatcher.forward(request, response);
+            }catch(SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
