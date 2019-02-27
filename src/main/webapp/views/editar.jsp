@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-2 col-md-offset-2 text-center">
                     <h2>
-                        <a href="productos?opcion=regresar" class="btn btn-outline-success" data-toggle="tooltip" data-placement="bottom" title="Volver">
+                        <a href="productos?opcion=listar" class="btn btn-outline-success" data-toggle="tooltip" data-placement="bottom" title="Volver">
                             <i class="fas fa-angle-double-left"></i>
                         </a>
                     </h2>
