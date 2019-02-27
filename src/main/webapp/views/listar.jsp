@@ -25,7 +25,7 @@
             </tr>
             <c:forEach var="producto" items="${lista}">
                 <tr>
-                    <td><c:out value="${producto.idProducto}"></c:out></td>
+                    <td><a href="productos?opcion=meditar&id=<c:out value="${producto.idProducto}"></c:out>"><c:out value="${producto.idProducto}"></c:out></a></td>
                     <td><c:out value="${producto.nombreProducto}"></c:out></td>
                     <td><c:out value="${producto.cantidadProducto}"></c:out></td>
                     <td><c:out value="${producto.precioProducto}"></c:out></td>
