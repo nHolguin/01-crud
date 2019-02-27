@@ -107,6 +107,9 @@ public class ProductoController extends HttpServlet {
             } catch(SQLException e) {
                 e.printStackTrace();
             }
+        }else if(opcion.equals("regresar")) {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+            requestDispatcher.forward(request, response);
         }
     }
 
