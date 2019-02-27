@@ -22,6 +22,7 @@
                 <td>Precio</td>
                 <td>Fecha Creaci&oacute;n</td>
                 <td>Fecha Actualizaci&oacute;n</td>
+                <td>Acci&oacute;n</td>
             </tr>
             <c:forEach var="producto" items="${lista}">
                 <tr>
@@ -31,7 +32,8 @@
                     <td><c:out value="${producto.precioProducto}"></c:out></td>
                     <td><c:out value="${producto.fechaCrear}"></c:out></td>
                     <td><c:out value="${producto.fechaActualizar}"></c:out></td>
-                    </tr>
+                    <td><a href="productos?opcion=eliminar&id=<c:out value="${producto.idProducto}"></c:out>">Eliminar</a></td>
+                </tr>
             </c:forEach>
         </table>
     </body>
