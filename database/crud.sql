@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 25-02-2019 a las 13:44:52
+-- Tiempo de generación: 28-02-2019 a las 06:26:15
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 7.1.26
 
@@ -31,8 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `productos` (
   `id_producto` int(11) NOT NULL,
   `nombre_producto` varchar(250) NOT NULL,
-  `cantidad_producto` decimal(5,2) NOT NULL,
-  `precio_producto` decimal(5,2) NOT NULL,
+  `cantidad_producto` double NOT NULL,
+  `precio_producto` double NOT NULL,
   `fecha_crear` date NOT NULL,
   `fecha_actualizar` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -42,8 +42,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre_producto`, `cantidad_producto`, `precio_producto`, `fecha_crear`, `fecha_actualizar`) VALUES
-(1, 'Arroz', '2.00', '100.00', '2019-02-25', '2019-02-25'),
-(2, 'Caraota', '1.00', '200.00', '2019-02-25', '2019-02-25');
+(1, 'Arroz', 2, 10, '2019-02-25', '2019-02-27'),
+(2, 'Caraota', 1, 200, '2019-02-25', '2019-02-25'),
+(3, 'Televisor LCD', 10, 9000, '2019-02-26', '2019-02-28'),
+(4, 'Lentejas', 2, 300, '2019-02-26', '2019-02-26'),
+(6, 'Pasta de Dientes', 10, 10, '2019-02-27', '2019-02-27'),
+(8, 'Pollo', 10, 150, '2019-02-27', '2019-02-27'),
+(9, 'Laptop', 10, 20000, '2019-02-28', '2019-02-28'),
+(10, 'eliminame', 12, 12, '2019-02-28', '2019-02-28');
 
 --
 -- Índices para tablas volcadas
@@ -63,7 +69,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

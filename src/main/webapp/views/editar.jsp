@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-2 col-md-offset-2"></div>
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <h1>Crear Producto</h1>
+                    <h1>Editar Producto</h1>
                 </div>
                 <div class="col-md-2 col-md-offset-2 text-center">
                     <h2>

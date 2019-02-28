@@ -13,14 +13,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+              <!-- Bootstrap CSS -->
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <title>Lista de Productos</title>
     </head>
     <body>
+
         <div class="container">
-            
+
             <div class="row">
                 <div class="col-md-2 col-md-offset-2"></div>
                 <div class="col-md-8 col-md-offset-2 text-center">
@@ -34,9 +35,9 @@
                     </h2>
                 </div>
             </div>
-            
+
             <div class="row justify-content-center">
-                
+
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
@@ -57,7 +58,7 @@
                             <td><c:out value="${producto.fechaActualizar}"></c:out></td>
                                 <td>
                                     <a class="btn btn-info " href="productos?opcion=meditar&id=<c:out value="${producto.idProducto}"></c:out>" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
-                                <a class="btn btn-danger" href="productos?opcion=eliminar&id=<c:out value="${producto.idProducto}"></c:out>" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
+                                    <a class="btn btn-danger" href="productos?opcion=eliminar&id=<c:out value="${producto.idProducto}"></c:out>" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                     </c:forEach>
